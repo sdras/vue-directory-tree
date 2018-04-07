@@ -2,13 +2,12 @@
   <div id="app">
     <app-item
       class="item"
-      :model="vuetree">
+      :unit="vuetree">
     </app-item>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import AppItem from './components/AppItem.vue'
 
 export default {

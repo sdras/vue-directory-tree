@@ -4,19 +4,19 @@
     <div
       @click="isFolder? open = !open : ''"
     >
-        {{ model.name }}
+        {{ unit.name }}
       <button v-if="isFolder">{{ open ? '-' : '+' }}</button>
     </div>
     
     <app-arrow v-if="isFolder" />
 
-    <section v-show="open" v-if="isFolder">
+    <section v-show="arrOpen" v-if="isFolder">
       
       <app-item
         class="item"
-        v-for="(model, index) in model.children"
-        :key="model.name"
-        :model="model"
+        v-for="(unit, index) in unit.children"
+        :key="unit.name"
+        :unit="unit"
       >
       </app-item>
   
@@ -34,16 +34,30 @@ export default {
     AppArrow
   },
   props: {
-    model: Object
+    unit: Object
   },
   data() {
     return {
-      open: true
+      open: false
     }
   },
   computed: {
+    opened() {
+      return this.$store.state.opened
+    },
+    arrOpen() {
+      var found = this.opened.find(el => {
+        if (el === this.unit.name) {
+          return true
+        } else {
+          return false
+        }
+      })
+
+      return found
+    },
     isFolder() {
-      return this.model.children && this.model.children.length
+      return this.unit.children && this.unit.children.length
     }
   }
 }
@@ -73,13 +87,13 @@ section {
   }
   .block {
     width: 200px;
-    button {
-      background: rgba(0, 0, 0, 0.2);
-    }
     color: #3b0837;
-    border: solid #682d63;
     background: #5fb49c;
     .block {
+      button {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      border: solid #682d63;
       width: 300px;
       background: #98dfaf;
       .block {

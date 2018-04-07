@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    opened: ['vue', '.github', 'scripts', 'src'],
     vuetree: {
       path: 'vue/',
       name: 'vue',
@@ -3530,7 +3531,6 @@ export default new Vuex.Store({
             }
           ]
         },
-        { path: 'vue//tree.js', name: 'tree.js', type: 'file' },
         {
           path: 'vue//types',
           name: 'types',
