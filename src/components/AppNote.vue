@@ -30,6 +30,7 @@ div {
   background: white;
   left: 150px;
   width: 250px;
+  top: 31px;
   font-family: Helvetica, sans-serif;
   line-height: 1.4em;
   z-index: 5000;
