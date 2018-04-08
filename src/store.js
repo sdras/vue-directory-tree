@@ -9,8 +9,8 @@ export default new Vuex.Store({
     opened: ['vue', '.github', 'scripts', 'src', 'core', 'instance'],
     //this will show any comments that are relevant to a particular file
     comments: {
-      name: 'CONTRIBUTING.md',
-      notes: `Has a section about the source code structure, this a quick way to become familiarized with the project structure.`
+      'vue//.github/CONTRIBUTING.md': `Has a section about the source code structure, this a quick way to become familiarized with the project structure.`,
+      'vue//src/core/instance/lifecycle.js': `lala`
     },
     //the whole directory structure for vue
     vuetree: {

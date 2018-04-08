@@ -4,9 +4,20 @@
     <div @click="toggleOpened(unit.name)">
         {{ unit.name }}
       <button v-if="isFolder">{{ arrOpen ? '-' : '+' }}</button>
+      <button 
+        v-if="comments[unit.path]" 
+        class="info" 
+        @mouseenter="noteShowing = true" 
+        @mouseleave="noteShowing = false"
+      >
+        info
+      </button>
     </div>
     
     <app-arrow v-if="isFolder" />
+    <div v-if="noteShowing">
+      <app-note :comments="comments" :path="unit.path"/>
+    </div>
 
     <section v-show="arrOpen" v-if="isFolder">
       
@@ -26,18 +37,21 @@
 <script>
 import { mapState } from 'vuex'
 import AppArrow from './AppArrow.vue'
+import AppNote from './AppNote.vue'
 
 export default {
   name: 'app-item',
   components: {
-    AppArrow
+    AppArrow,
+    AppNote
   },
   props: {
     unit: Object
   },
   data() {
     return {
-      open: false
+      open: false,
+      noteShowing: false
     }
   },
   methods: {
@@ -111,5 +125,17 @@ button {
   border-radius: 2px;
   cursor: pointer;
   border: none;
+}
+
+.block button.info,
+.block .block button.info {
+  position: absolute;
+  right: 10px;
+  background: #bd1369;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: white;
+  margin-top: -2px;
+  letter-spacing: 0.05em;
 }
 </style>
