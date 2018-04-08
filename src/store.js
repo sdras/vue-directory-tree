@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    opened: ['vue', '.github', 'scripts', 'src'],
+    opened: ['vue', '.github', 'scripts', 'src', 'core', 'instance'],
     vuetree: {
       path: 'vue/',
       name: 'vue',
@@ -3615,6 +3615,14 @@ export default new Vuex.Store({
       ]
     }
   },
-  mutations: {},
+  mutations: {
+    addToOpened(state, name) {
+      if (state.opened.includes(name)) {
+        state.opened = state.opened.filter(e => e !== name)
+      } else {
+        state.opened.push(name)
+      }
+    }
+  },
   actions: {}
 })

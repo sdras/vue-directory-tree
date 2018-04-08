@@ -1,11 +1,9 @@
 <template>
   <div class="block">
 
-    <div
-      @click="isFolder? open = !open : ''"
-    >
+    <div @click="addToOpened(unit.name)">
         {{ unit.name }}
-      <button v-if="isFolder">{{ open ? '-' : '+' }}</button>
+      <button v-if="isFolder">{{ arrOpen ? '-' : '+' }}</button>
     </div>
     
     <app-arrow v-if="isFolder" />
@@ -39,6 +37,11 @@ export default {
   data() {
     return {
       open: false
+    }
+  },
+  methods: {
+    addToOpened(name) {
+      this.$store.commit('addToOpened', name)
     }
   },
   computed: {
