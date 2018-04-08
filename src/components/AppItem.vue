@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppArrow from './AppArrow.vue'
 
 export default {
@@ -45,9 +46,7 @@ export default {
     }
   },
   computed: {
-    opened() {
-      return this.$store.state.opened
-    },
+    ...mapState(['opened', 'comments']),
     arrOpen() {
       return this.opened.find(el => el === this.unit.name)
     },
@@ -60,18 +59,18 @@ export default {
 
 <style lang="scss">
 section {
-  transform: translateX(100px);
+  transform: translateX(70px);
 }
 
 .block {
   position: relative;
   display: block;
   background: #414288;
-  padding: 8px 12px;
+  padding: 4px 10px;
   border-radius: 8px;
   border: solid #3b0837;
   margin: 5px 0;
-  width: 100px;
+  width: 75px;
   color: white;
   transition: 0.5s all ease;
   button {

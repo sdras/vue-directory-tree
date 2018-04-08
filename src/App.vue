@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <app-item
-      class="item"
-      :unit="vuetree">
-    </app-item>
+    <app-item class="item" :unit="vuetree" />
   </div>
 </template>
 
@@ -27,5 +24,6 @@ body {
   font-family: monospace;
   background: #682d63;
   display: flex;
+  font-size: 15px;
 }
 </style>

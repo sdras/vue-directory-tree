@@ -5,7 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    //this lets us know which files to highlight
     opened: ['vue', '.github', 'scripts', 'src', 'core', 'instance'],
+    //this will show any comments that are relevant to a particular file
+    comments: {
+      name: 'CONTRIBUTING.md',
+      notes: `Has a section about the source code structure, this a quick way to become familiarized with the project structure.`
+    },
+    //the whole directory structure for vue
     vuetree: {
       path: 'vue/',
       name: 'vue',
