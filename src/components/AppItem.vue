@@ -1,7 +1,7 @@
 <template>
   <div class="block">
 
-    <div @click="addToOpened(unit.name)">
+    <div @click="toggleOpened(unit.name)">
         {{ unit.name }}
       <button v-if="isFolder">{{ arrOpen ? '-' : '+' }}</button>
     </div>
@@ -40,8 +40,8 @@ export default {
     }
   },
   methods: {
-    addToOpened(name) {
-      this.$store.commit('addToOpened', name)
+    toggleOpened(name) {
+      this.$store.commit('toggleOpened', name)
     }
   },
   computed: {
@@ -49,15 +49,7 @@ export default {
       return this.$store.state.opened
     },
     arrOpen() {
-      var found = this.opened.find(el => {
-        if (el === this.unit.name) {
-          return true
-        } else {
-          return false
-        }
-      })
-
-      return found
+      return this.opened.find(el => el === this.unit.name)
     },
     isFolder() {
       return this.unit.children && this.unit.children.length

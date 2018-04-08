@@ -3616,7 +3616,7 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    addToOpened(state, name) {
+    toggleOpened(state, name) {
       if (state.opened.includes(name)) {
         state.opened = state.opened.filter(e => e !== name)
       } else {
