@@ -6,13 +6,38 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     //this lets us know which files to highlight
-    opened: ['vue', '.github', 'scripts', 'src', 'core', 'instance'],
+    opened: [
+      'vue',
+      '.github',
+      'scripts',
+      'src',
+      'core',
+      'instance',
+      'dist',
+      'platforms',
+      'web'
+    ],
     //this will show any comments that are relevant to a particular file
     comments: {
       'vue/.github/CONTRIBUTING.md': `Has a section about the source code structure, this a quick way to become familiarized with the project structure.`,
-      'vue/node_modules/directory-tree/package.json': `Most of the scritps are prefixed: there are dev scripts, build scripts, and test scripts. They watch the source code and build a dist file.`,
+      'vue/package.json': `Most of the scritps are prefixed: there are dev scripts, build scripts, and test scripts. They watch the source code and build a dist file.`,
       'vue/dist/vue.js': `This file can be directly included in the browser, which is very useful when we're trying to triage issues that can be reproduced on JSFiddle.`,
-      'vue/dist/vue.runtime.esm.js': `If you are trying to build a dev build of Vue inside a webpack project, one thing you can do is you can npm link Vue into that project and then you can use one of the dev scripts that watch and builds the vue.runtime.esm.js dist. Once the new file is written, it will automatically trigger webpack to update the build as well.`
+      'vue/dist/vue.runtime.esm.js': `If you are trying to build a dev build of Vue inside a webpack project, one thing you can do is you can npm link Vue into that project and then you can use one of the dev scripts that watch and builds the vue.runtime.esm.js dist. Once the new file is written, it will automatically trigger webpack to update the build as well.`,
+      'vue/scripts/config.js': `This is a file that's responsible for dynamically generating the roll-up config for producing a build. We're loading a bunch of roll-up plug-ins, these are the banner, and we load the alias.`,
+      'vue/scripts/alias.js': `Instead of using Relative Paths, we use this file. Whenever you see an import statement like this, it's using this alias to link to the source compiler. Keep this in mind when you are reading the source code because these common aliases are defined here.`,
+      'vue/src/platforms/web/entry-runtime-with-compiler.js': `This is the file where it all starts. Everything needs to be pure javascript before the compiler step because we can’t be assumptive- it needs to be able to run in both browser, and node.js, it cannot assume DOM or browser API. We’re directly importing the parts of vue that are purely platform agnostic, also, the config, some utils, we’re assembling the vue runtime for use in the browser. 
+  <ul>
+    <li>It’s also adding all the compilers.</li> 
+    <li>We override the mount function on the vue prototype. We check to see if the render function is already defined and if the el argument is a selector, if not we check if it has it’s own template defined, otherwise get the outer HTML. If so, we try to extract the template string from the element inside the browser.</li>
+    <li>It basically extracts the template that we are supposed to use and compiles the template into the render function. Now we can call mount.</li>
+    <li>We’re importing from compiler/index.</li>
+  </ul>`,
+      'vue/src/platforms/web/runtime': `Here we can safely use any web DOM API that we want. For example, attrs.js you can see that we are setting attributes`,
+      'vue/src/platforms/web/runtime/index.js': `is only adding the runtime and basic mount is defined in the plain runtime. basic mount takes the element and immediately calls mount component. it assumes that the element has a mounting point and that the element has a render function defined. (see entry-with-runtime for more)`,
+      'vue/src/platforms/web/entry-runtime.js': `simply imports the runtime and builds it`,
+      'vue/src/platforms/weex': `does what you think it would- creates the weex implementation`,
+      'vue/src/platforms': `Technically anything in platform would be able to target a new platform, you could fork vue and add another platfom (i.e. nativescript). v3 we would remove this step- people would not need to fork vue, they could just use vue as a dependency.`,
+      'vue/src/compiler/index.js': `This is the part used to build the standalone compiler that's used in the browser. We're importing a bunch of things and exporting them in the entry here. This is essentially the API for the standalone Vue template compiler package. This is the starting point if you want to read the source code. Once you know where the entry points are, the import dependency relationships become clear.`
     },
     //the whole directory structure for vue
     vuetree: {

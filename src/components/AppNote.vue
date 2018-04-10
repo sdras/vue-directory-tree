@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ note }}</p>
+    <p v-html="note"></p>
   </div>
 </template>
 
@@ -28,8 +28,8 @@ export default {
 div {
   position: absolute;
   background: white;
-  left: 150px;
-  width: 250px;
+  left: 200px;
+  width: 450px;
   top: 31px;
   font-family: Helvetica, sans-serif;
   line-height: 1.4em;
