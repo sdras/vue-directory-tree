@@ -28,9 +28,9 @@ export default {
 div {
   position: absolute;
   background: white;
-  left: 200px;
+  left: 335px;
   width: 450px;
-  top: 31px;
+  top: 0;
   font-family: Helvetica, sans-serif;
   line-height: 1.4em;
   z-index: 5000;

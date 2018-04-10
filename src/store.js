@@ -57,8 +57,8 @@ export default new Vuex.Store({
     <li>The render proxy is defined instance/proxy, it uses the proxy API. If the environment does not support native proxies, this vm render proxy will just be vm itself. If the proxy is available, we pass a proxy of the vm instance itself and then try to detect access to properties that are not defined on the vm.</li>
     <li>That's why we are able to give user warnings, because we are passing in a vm render proxy here which detects access to unknown properties.</li>
     <li>We do some error-handing here too</li>
-  </ul>,
-      'vue/src/core/instance/lifecycle.js':- gives us the update, and destroy functions, and exports the mountComponent Function.
+  </ul>`,
+      'vue/src/core/instance/lifecycle.js': `Gives us the update, and destroy functions, and exports the mountComponent Function.
   <ul>
     <li>The call hook, and activateChildComponent are for <keep-alive>, etc.</li> 
     <li>updateChildComponent s called whenever a parent component is passing props/passing updated props to a child component. This is important: whenever a child component is being updated this function is called.</li> 
@@ -72,7 +72,8 @@ export default new Vuex.Store({
     <li>createPatchFunction our core patch algorithm- is platform agnostic.</li> 
     <li>modules: each module contains a bunch of hooks. We have create, update etc hooks for each update and will be applied to every vnode at the different phase of its lifecycle. You can think of a virtual dom module as a vue global mixin.</li>
     <li>web/runtime/nodeops: calls the real document.createElement and all the other DOM APIs. If you’re writing for weex or nativescript- this is where you would want to call to the target rendering platform.</li>
-  </ul>`
+  </ul>`,
+      'vue/src/core/vdom/modules/directives.js': `directives are a virtual dom module. The directive module has three hooks, they’re injected into the patch function, they’re applied at every part of the lifecycle.`
     },
     //the whole directory structure for vue
     vuetree: {
