@@ -23,7 +23,7 @@
       
       <app-item
         class="item"
-        v-for="(unit, index) in unit.children"
+        v-for="unit in unit.children"
         :key="unit.name"
         :unit="unit"
       >
