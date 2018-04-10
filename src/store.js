@@ -37,7 +37,42 @@ export default new Vuex.Store({
       'vue/src/platforms/web/entry-runtime.js': `simply imports the runtime and builds it`,
       'vue/src/platforms/weex': `does what you think it would- creates the weex implementation`,
       'vue/src/platforms': `Technically anything in platform would be able to target a new platform, you could fork vue and add another platfom (i.e. nativescript). v3 we would remove this step- people would not need to fork vue, they could just use vue as a dependency.`,
-      'vue/src/compiler/index.js': `This is the part used to build the standalone compiler that's used in the browser. We're importing a bunch of things and exporting them in the entry here. This is essentially the API for the standalone Vue template compiler package. This is the starting point if you want to read the source code. Once you know where the entry points are, the import dependency relationships become clear.`
+      'vue/src/compiler/index.js': `This is the part used to build the standalone compiler that's used in the browser. We're importing a bunch of things and exporting them in the entry here. This is essentially the API for the standalone Vue template compiler package. This is the starting point if you want to read the source code. Once you know where the entry points are, the import dependency relationships become clear.`,
+      'vue/src/core/instance/index.js': `is the 'this' object we work with inside components, we all know this part. This is where the Vue function is defined. We init a bunch of things here. We separate a bunch of concerns into mixins.`,
+      'vue/src/core/instance/init.js': `has the main flow of what an instance goes through, in initMixin
+  <ul>
+    <li>we call beforeCreate and created. It immediately calls vm.$mount if an element is given.</li> 
+    <li>The chunks of code near the bottom are there for the edge case when we expose an object- export default Vue.extend etc. Vue.extend is called before Vue.use is called. So we want to make sure that any late-applied global mixins still get applied. (resolveConstructorOptions)</li>
+    <li>initInternalComponent is an optimization: vm.$options is expensive, it’s very dynamic, it’s not monomorphic, this is a perf bottleneck. so any predefined component that doesn’t have these options gets on the fast path. We copy the necessary options that we know what exists.</li>
+  </ul>`,
+      'vue/src/core/instance/render.js': `is called inside the lifecycle initialization of each component, on initRender. 
+  <ul>
+    <li>We expose two versions of the createElement function, they are curried- one is more optimized- it skips the normalization optimization we perform inside the compliation.</li>
+    <li>We do this to see if they are all already in the vdom, and already flat because if they aren’t we have to take the arrays and flatten the nested arrays. So that can save a lot of time.</li>
+    <li>This is a public createElement, so this is the 'h'. One of the reasons that render needs to accept the 'h' from its argument is that this 'h' is bound to this specific component.</li>
+    <li>This is essentially a pre-bound createElement function that's always called  with the current vm as it's context.</li>
+    <li>Like React, you need to always use this ‘h’ that's passed from the render function to ensure the vnode has a correct vm context when it's created. The vm context is important down the road when we’re trying to resolve slots and other things.</li>
+    <li>Also exposes $attr and $listeners.</li>
+    <li>On line 83, that’s where we are calling the user-provided render function here with a render proxy and our create element. This is the 'h' that we're passing. That's the 'this' that we find inside the render functions.</li>
+    <li>The render proxy is defined instance/proxy, it uses the proxy API. If the environment does not support native proxies, this vm render proxy will just be vm itself. If the proxy is available, we pass a proxy of the vm instance itself and then try to detect access to properties that are not defined on the vm.</li>
+    <li>That's why we are able to give user warnings, because we are passing in a vm render proxy here which detects access to unknown properties.</li>
+    <li>We do some error-handing here too</li>
+  </ul>,
+      'vue/src/core/instance/lifecycle.js':- gives us the update, and destroy functions, and exports the mountComponent Function.
+  <ul>
+    <li>The call hook, and activateChildComponent are for <keep-alive>, etc.</li> 
+    <li>updateChildComponent s called whenever a parent component is passing props/passing updated props to a child component. This is important: whenever a child component is being updated this function is called.</li> 
+    <li>mountComponent mounts the component. This is called inside $mount(in web/runtime/index) we do some checks, then we call beforeMount hook.</li> 
+    <li>updateComponent-  Is passed to autorun. It will be different during prod and dev. We track start and end timing. It will invoke the users render function and build the virtual dom tree. It will call the patch function, diff the trees, and apply the updates. Then this whole function is fed into a watcher. Whenever you update something, this updateComponent is called.</li>
+    <li>updateComponent will be fed into a watcher. The watcher will call beforeUpdate any time the dependency changes and it’s notified to update.</li>
+    <li>After the watcher is run for the first time we are considered to be mounted.</li>
+  </ul>`,
+      'vue/src/platforms/web/runtime/patch.js': `You should probably avoid touching this file. 
+  <ul>
+    <li>createPatchFunction our core patch algorithm- is platform agnostic.</li> 
+    <li>modules: each module contains a bunch of hooks. We have create, update etc hooks for each update and will be applied to every vnode at the different phase of its lifecycle. You can think of a virtual dom module as a vue global mixin.</li>
+    <li>web/runtime/nodeops: calls the real document.createElement and all the other DOM APIs. If you’re writing for weex or nativescript- this is where you would want to call to the target rendering platform.</li>
+  </ul>`
     },
     //the whole directory structure for vue
     vuetree: {
