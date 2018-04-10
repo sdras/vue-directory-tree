@@ -20,7 +20,7 @@ export default new Vuex.Store({
     //this will show any comments that are relevant to a particular file
     comments: {
       'vue/.github/CONTRIBUTING.md': `Has a section about the source code structure, this a quick way to become familiarized with the project structure.`,
-      'vue/package.json': `Most of the scritps are prefixed: there are dev scripts, build scripts, and test scripts. They watch the source code and build a dist file.`,
+      'vue/package.json': `Most of the scripts are prefixed: there are dev scripts, build scripts, and test scripts. They watch the source code and build a dist file.`,
       'vue/dist/vue.js': `This file can be directly included in the browser, which is very useful when we're trying to triage issues that can be reproduced on JSFiddle.`,
       'vue/dist/vue.runtime.esm.js': `If you are trying to build a dev build of Vue inside a webpack project, one thing you can do is you can npm link Vue into that project and then you can use one of the dev scripts that watch and builds the vue.runtime.esm.js dist. Once the new file is written, it will automatically trigger webpack to update the build as well.`,
       'vue/scripts/config.js': `This is a file that's responsible for dynamically generating the roll-up config for producing a build. We're loading a bunch of roll-up plug-ins, these are the banner, and we load the alias.`,
