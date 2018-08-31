@@ -15,7 +15,9 @@ export default new Vuex.Store({
       'instance',
       'dist',
       'platforms',
-      'web'
+      'web',
+      'compiler',
+      'runtime'
     ],
     //this will show any comments that are relevant to a particular file
     comments: {

@@ -80,7 +80,7 @@ section {
   position: relative;
   display: block;
   background: #414288;
-  padding: 4px 10px;
+  padding: 4px 40px 4px 10px;
   border-radius: 8px;
   border: solid #3b0837;
   margin: 5px 0;
