@@ -77,16 +77,20 @@ section {
 }
 
 .block {
+  font-size: 14px;
   position: relative;
   display: block;
-  background: #414288;
   padding: 4px 40px 4px 10px;
-  border-radius: 8px;
-  border: solid #3b0837;
   margin: 5px 0;
   width: 75px;
-  color: white;
   transition: 0.5s all ease;
+  font-family: 'Space Mono', monospace;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: #ccc;
+  text-align: left;
+  border-radius: 4px;
+  white-space: nowrap;
   button {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
@@ -95,28 +99,6 @@ section {
   }
   .block {
     width: 200px;
-    color: #3b0837;
-    background: #5fb49c;
-    .block {
-      button {
-        background: rgba(0, 0, 0, 0.2);
-      }
-      border: solid #682d63;
-      width: 300px;
-      background: #98dfaf;
-      .block {
-        background: #b7e4a4;
-        .block {
-          background: #e0ebc8;
-          .block {
-            background: #edf1e4;
-            .block {
-              background: #fff;
-            }
-          }
-        }
-      }
-    }
   }
 }
 
