@@ -90,7 +90,6 @@ section {
   border-bottom-color: #ccc;
   text-align: left;
   border-radius: 4px;
-  white-space: nowrap;
   button {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
@@ -99,6 +98,9 @@ section {
   }
   .block {
     width: 200px;
+    .block .block {
+      width: 300px;
+    }
   }
 }
 
@@ -113,11 +115,10 @@ button {
 .block .block button.info {
   position: absolute;
   right: 10px;
-  background: #bd1369;
+  background: #42b983;
   padding: 3px 8px;
   font-size: 12px;
   color: white;
-  margin-top: -2px;
   letter-spacing: 0.05em;
 }
 </style>

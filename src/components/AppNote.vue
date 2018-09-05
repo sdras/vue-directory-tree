@@ -28,14 +28,19 @@ export default {
 div {
   position: absolute;
   background: white;
-  left: 335px;
-  width: 450px;
+  left: calc(100% + 10px);
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  width: 300px;
   top: 0;
-  font-family: Helvetica, sans-serif;
   line-height: 1.4em;
   z-index: 5000;
   border-radius: 4px;
-  padding: 4px 20px;
-  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25);
+  margin: 5px 0;
+  transition: 0.5s all ease;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: #ccc;
+  padding: 2px 20px;
 }
 </style>

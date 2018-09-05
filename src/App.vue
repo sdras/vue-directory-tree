@@ -35,7 +35,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #34495e;
   background-color: #f8f8f8;
-  width: 100vw;
+  max-width: 100vw;
+  width: 900px;
+  margin: 0 auto;
   min-height: 100vh;
 }
 
