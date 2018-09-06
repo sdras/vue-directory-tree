@@ -68,7 +68,7 @@ export default {
 }
 
 .more-info-contain {
-  fill: #ccc;
+  fill: #b1afaf;
 }
 
 .more-info {

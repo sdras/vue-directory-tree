@@ -55,7 +55,7 @@ nav {
   position: relative;
   svg {
     path {
-      fill: #ccc;
+      fill: #b1afaf;
     }
   }
   .github {

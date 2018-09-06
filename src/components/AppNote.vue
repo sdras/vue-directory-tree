@@ -34,7 +34,7 @@ div {
   width: 300px;
   top: -6px;
   line-height: 1.4em;
-  z-index: 10000;
+  z-index: 1000;
   border-radius: 4px;
   margin: 5px 0;
   transition: 0.5s all ease;

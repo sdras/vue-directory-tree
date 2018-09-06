@@ -5,10 +5,10 @@
         {{ unit.name }}
       <button v-if="isFolder">{{ arrOpen ? '-' : '+' }}</button>
       <button 
-        v-if="comments[unit.path]" 
-        class="info" 
+        v-if="comments[unit.path]"  
         @mouseenter="noteShowing = true" 
         @mouseleave="noteShowing = false"
+        class="info"
       >
         info
       </button>
@@ -89,9 +89,12 @@ section {
   border-radius: 4px;
   button {
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 2px;
     cursor: pointer;
-    border: none;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    &:focus {
+      outline: 1px dashed #ddd;
+    }
   }
   .block {
     width: 200px;
@@ -99,13 +102,6 @@ section {
       width: 300px;
     }
   }
-}
-
-button {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  cursor: pointer;
-  border: none;
 }
 
 .block button.info,
@@ -119,5 +115,7 @@ button {
   color: white;
   margin-top: -1px;
   letter-spacing: 0.05em;
+  cursor: pointer;
+  border: none;
 }
 </style>
