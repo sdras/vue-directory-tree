@@ -1,24 +1,32 @@
 <template>
-  <div id="app">
+  <component :is="selected" id="app">
     <app-nav />
     <main>
       <app-item class="item" :unit="vuetree" />
     </main>
-  </div>
+  </component>
 </template>
 
 <script>
 import AppNav from './components/AppNav.vue'
 import AppItem from './components/AppItem.vue'
+import AppDarkmode from './components/AppDarkmode.vue'
+import AppLightmode from './components/AppLightmode.vue'
 
 export default {
   components: {
     AppNav,
-    AppItem
+    AppItem,
+    AppDarkmode,
+    AppLightmode
   },
   computed: {
     vuetree() {
       return this.$store.state.vuetree
+    },
+    selected() {
+      const dark = this.$store.state.dark
+      return dark ? 'AppDarkmode' : 'AppLightmode'
     }
   }
 }

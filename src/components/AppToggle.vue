@@ -2,7 +2,7 @@
   <div>
     <input class="tgl tgl-flip" id="cb5" type="checkbox"/>
     <label 
-      @click="light = !light"
+      @click="toggleMode"
       for="cb5" 
       class="tgl-btn" 
       data-tg-off="Light" 
@@ -12,9 +12,9 @@
 
 <script>
 export default {
-  data() {
-    return {
-      light: false
+  methods: {
+    toggleMode() {
+      this.$store.commit('toggleDark')
     }
   }
 }

@@ -75,7 +75,7 @@ export default {
 
 .more-info {
   position: absolute;
-  top: 0;
+  top: -2px;
   right: 0;
   width: 24px;
   height: 24px;

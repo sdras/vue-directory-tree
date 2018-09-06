@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    dark: false,
     //this lets us know which files to highlight
     opened: [
       'vue',
@@ -3680,6 +3681,9 @@ export default new Vuex.Store({
       } else {
         state.opened.push(name)
       }
+    },
+    toggleDark(state) {
+      state.dark = !state.dark
     }
   },
   actions: {}
