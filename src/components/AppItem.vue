@@ -19,16 +19,13 @@
       <app-note :comments="comments" :path="unit.path"/>
     </div>
 
-    <section v-show="arrOpen" v-if="isFolder">
-      
+    <section v-show="arrOpen">
       <app-item
         class="item"
         v-for="unit in unit.children"
         :key="unit.name"
         :unit="unit"
-      >
-      </app-item>
-  
+      />
     </section>
 
   </div>
@@ -77,16 +74,19 @@ section {
 }
 
 .block {
+  font-size: 14px;
   position: relative;
   display: block;
-  background: #414288;
   padding: 4px 40px 4px 10px;
-  border-radius: 8px;
-  border: solid #3b0837;
   margin: 5px 0;
   width: 75px;
-  color: white;
   transition: 0.5s all ease;
+  font-family: 'Space Mono', monospace;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: #ccc;
+  text-align: left;
+  border-radius: 4px;
   button {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
@@ -95,27 +95,8 @@ section {
   }
   .block {
     width: 200px;
-    color: #3b0837;
-    background: #5fb49c;
-    .block {
-      button {
-        background: rgba(0, 0, 0, 0.2);
-      }
-      border: solid #682d63;
+    .block .block {
       width: 300px;
-      background: #98dfaf;
-      .block {
-        background: #b7e4a4;
-        .block {
-          background: #e0ebc8;
-          .block {
-            background: #edf1e4;
-            .block {
-              background: #fff;
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -129,13 +110,14 @@ button {
 
 .block button.info,
 .block .block button.info {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   position: absolute;
-  right: 10px;
-  background: #bd1369;
+  right: 8px;
+  background: #42b983;
   padding: 3px 8px;
   font-size: 12px;
   color: white;
-  margin-top: -2px;
+  margin-top: -1px;
   letter-spacing: 0.05em;
 }
 </style>

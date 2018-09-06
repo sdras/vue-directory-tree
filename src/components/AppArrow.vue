@@ -15,6 +15,6 @@ svg {
   width: 30px;
   top: 35px;
   left: 14px;
-  fill: rgba(119, 59, 114, 0.5);
+  fill: #42b983;
 }
 </style>
