@@ -53,16 +53,17 @@ nav {
 }
 
 .icons {
+  display: flex;
+  width: 180px;
+  justify-content: space-around;
+  padding-top: 2px;
   float: right;
   margin-top: 5px;
   position: relative;
   svg {
     path {
-      fill: #b1afaf;
+      fill: #42b983;
     }
-  }
-  .github {
-    margin: 2px 35px 0 0;
   }
 }
 </style>

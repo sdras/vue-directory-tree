@@ -1,7 +1,8 @@
 <template>
   <div>
-    <input @click="light = !light" class="tgl tgl-flip" id="cb5" type="checkbox"/>
+    <input class="tgl tgl-flip" id="cb5" type="checkbox"/>
     <label 
+      @click="light = !light"
       for="cb5" 
       class="tgl-btn" 
       data-tg-off="Light" 
@@ -45,12 +46,13 @@ export default {
       position: absolute;
       top: 0;
       right: 0;
+      font-size: 14px;
       cursor: pointer;
       backface-visibility: hidden;
       border-radius: 4px;
       background: white;
       color: #399c70;
-      border: 1px solid #42b983;
+      border: 2px solid #42b983;
     }
 
     &:after {

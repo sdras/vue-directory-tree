@@ -68,7 +68,9 @@ export default {
 }
 
 .more-info-contain {
-  fill: #b1afaf;
+  fill: #42b983;
+  position: relative;
+  margin-left: -8px;
 }
 
 .more-info {
