@@ -1,12 +1,10 @@
 <template>
   <div class="more-info-contain">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="more-info" aria-labelledby="title" role="presentation" @mouseenter="show = !show" @mouseleave="show = !show">
-      <title id="title">Question Mark Icon</title>
-      <g class="questionpath">
-        <path d="M87,8a5,5,0,0,1,5,5V87a5,5,0,0,1-5,5H13a5,5,0,0,1-5-5V13a5,5,0,0,1,5-5H87m0-3H13a8,8,0,0,0-8,8V87a8,8,0,0,0,8,8H87a8,8,0,0,0,8-8V13a8,8,0,0,0-8-8Z"></path>
-        <path d="M46.12,60.18v-4.1c0-6.34.37-7.24,5.15-12.16,3.81-3.88,4.85-5.67,4.85-8.36,0-3.51-2.31-5.6-6.19-5.6-4.4,0-6.72,2.24-7.16,7.16H38.13C38.51,29.21,42.76,25,50.37,25c7.09,0,11.49,4,11.49,10.52,0,4-1.27,6.19-6.34,11.19-4,4-4.25,4.7-4.25,10.82v2.61Zm6.79,10.6a4.29,4.29,0,1,1-4.25-4.33A4.32,4.32,0,0,1,52.91,70.78Z"></path>
-        <rect x="5" y="5" width="90" height="90" rx="5" ry="5" fill="rgba(0, 0, 0, 0)" />
-      </g>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-labelledby="info">
+      <title id="info">Info</title>
+      <path d="M12 1c-6.1 0-11 4.9-11 11s4.9 11 11 11 11-4.9 11-11-4.9-11-11-11zM12 21c-5 0-9-4-9-9s4-9 9-9c5 0 9 4 9 9s-4 9-9 9z"></path>
+      <path d="M12 11c-0.6 0-1 0.4-1 1v4c0 0.6 0.4 1 1 1s1-0.4 1-1v-4c0-0.6-0.4-1-1-1z"></path>
+      <path d="M11.3 7.3c-0.2 0.2-0.3 0.4-0.3 0.7s0.1 0.5 0.3 0.7c0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.2-0.2 0.3-0.4 0.3-0.7s-0.1-0.5-0.3-0.7c-0.4-0.4-1-0.4-1.4 0z"></path>
     </svg>
     <transition name="appear">
       <div class="findoutmore" v-if="show">
@@ -61,9 +59,7 @@ export default {
 }
 
 .more-info-contain {
-  position: absolute;
-  top: 40px;
-  right: 40px;
+  fill: #ccc;
 }
 
 .more-info {

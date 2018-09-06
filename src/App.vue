@@ -4,20 +4,17 @@
     <main>
       <app-item class="item" :unit="vuetree" />
     </main>
-    <app-moreinfo />
   </div>
 </template>
 
 <script>
 import AppNav from './components/AppNav.vue'
 import AppItem from './components/AppItem.vue'
-import AppMoreinfo from './components/AppMoreinfo.vue'
 
 export default {
   components: {
     AppNav,
-    AppItem,
-    AppMoreinfo
+    AppItem
   },
   computed: {
     vuetree() {
