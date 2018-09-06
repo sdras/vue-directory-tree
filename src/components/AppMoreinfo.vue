@@ -1,6 +1,14 @@
 <template>
   <div class="more-info-contain">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-labelledby="info">
+    <svg 
+      @mouseenter="show = !show" 
+      @mouseleave="show = !show" 
+      class="more-info"
+      xmlns="http://www.w3.org/2000/svg" 
+      width="24" height="24" 
+      viewBox="0 0 24 24" 
+      aria-labelledby="info"
+    >
       <title id="info">Info</title>
       <path d="M12 1c-6.1 0-11 4.9-11 11s4.9 11 11 11 11-4.9 11-11-4.9-11-11-11zM12 21c-5 0-9-4-9-9s4-9 9-9c5 0 9 4 9 9s-4 9-9 9z"></path>
       <path d="M12 11c-0.6 0-1 0.4-1 1v4c0 0.6 0.4 1 1 1s1-0.4 1-1v-4c0-0.6-0.4-1-1-1z"></path>
@@ -25,11 +33,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .findoutmore {
   position: absolute;
-  top: 5px;
-  right: 40px;
+  top: 31px;
+  right: 2px;
+  line-height: 1.3;
   width: 300px;
   z-index: 4000;
   display: block;
@@ -66,8 +75,8 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  width: 35px;
-  height: 35px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 }
 
