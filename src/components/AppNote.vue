@@ -32,9 +32,9 @@ div {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   font-size: 15px;
   width: 300px;
-  top: 0;
+  top: -6px;
   line-height: 1.4em;
-  z-index: 5000;
+  z-index: 10000;
   border-radius: 4px;
   margin: 5px 0;
   transition: 0.5s all ease;

@@ -35,7 +35,6 @@ export default {
   width: 300px;
   height: 50px;
   z-index: 4000;
-  text-align: right;
 }
 
 @media (max-width: 800px) {
