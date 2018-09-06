@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <h1>Vue Directory Tree</h1>
-    <p>Familiarize yourself quickly with Vue by traversing the tree and reading through the notes.</p>
-    <app-item class="item" :unit="vuetree" />
+    <app-nav />
+    <main>
+      <app-item class="item" :unit="vuetree" />
+    </main>
     <app-moreinfo />
   </div>
 </template>
 
 <script>
+import AppNav from './components/AppNav.vue'
 import AppItem from './components/AppItem.vue'
 import AppMoreinfo from './components/AppMoreinfo.vue'
 
 export default {
   components: {
+    AppNav,
     AppItem,
     AppMoreinfo
   },
@@ -36,14 +39,17 @@ body {
   color: #34495e;
   background-color: #f8f8f8;
   max-width: 100vw;
-  width: 900px;
-  margin: 0 auto;
   min-height: 100vh;
 }
 
 #app {
   width: 100vw;
   min-height: 100vh;
+}
+
+main {
+  width: 900px;
+  margin: 0 auto;
 }
 
 h1,

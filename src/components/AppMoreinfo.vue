@@ -33,8 +33,15 @@ export default {
   top: 5px;
   right: 40px;
   width: 300px;
-  height: 50px;
   z-index: 4000;
+  display: block;
+  padding: 20px 40px 30px;
+  transition: 0.5s all ease;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: #ccc;
+  text-align: left;
+  border-radius: 4px;
 }
 
 @media (max-width: 800px) {

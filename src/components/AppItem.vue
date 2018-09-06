@@ -19,16 +19,13 @@
       <app-note :comments="comments" :path="unit.path"/>
     </div>
 
-    <section v-show="arrOpen" v-if="isFolder">
-      
+    <section v-show="arrOpen">
       <app-item
         class="item"
         v-for="unit in unit.children"
         :key="unit.name"
         :unit="unit"
-      >
-      </app-item>
-  
+      />
     </section>
 
   </div>
@@ -113,12 +110,14 @@ button {
 
 .block button.info,
 .block .block button.info {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   position: absolute;
-  right: 10px;
+  right: 8px;
   background: #42b983;
   padding: 3px 8px;
   font-size: 12px;
   color: white;
+  margin-top: -1px;
   letter-spacing: 0.05em;
 }
 </style>
