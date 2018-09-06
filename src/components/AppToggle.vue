@@ -1,11 +1,11 @@
 <template>
   <div>
-    <input class="tgl tgl-flip" id="cb5" type="checkbox"/>
+    <input @click="light = !light" class="tgl tgl-flip" id="cb5" type="checkbox"/>
     <label 
       for="cb5" 
       class="tgl-btn" 
-      data-tg-off="Nope" 
-      data-tg-on="Yeah!" />
+      data-tg-off="Light" 
+      data-tg-on="Dark" />
   </div>
 </template>
 
@@ -13,44 +13,52 @@
 export default {
   data() {
     return {
-      mode: 'light'
+      light: false
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+//visually hidden, still accessible checkbox
+.tgl {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 .tgl-flip {
   + .tgl-btn {
     padding: 2px;
     transition: all 0.2s ease;
-    font-family: sans-serif;
     perspective: 100px;
     &:after,
     &:before {
       display: inline-block;
-      transition: all 0.4s ease;
-      width: 100%;
+      transition: all 0.3s ease;
+      width: 60px;
       text-align: center;
-      position: absolute;
-      line-height: 2em;
-      font-weight: bold;
-      color: #fff;
+      line-height: 1.75em;
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
+      cursor: pointer;
       backface-visibility: hidden;
       border-radius: 4px;
+      background: white;
+      color: #399c70;
+      border: 1px solid #42b983;
     }
 
     &:after {
       content: attr(data-tg-on);
-      background: #02c66f;
       transform: rotateY(-180deg);
     }
 
     &:before {
-      background: #ff3a19;
       content: attr(data-tg-off);
     }
 
@@ -66,8 +74,8 @@ export default {
 
     &:after {
       transform: rotateY(0);
-      left: 0;
-      background: #7fc6a6;
+      right: 0;
+      background: white;
     }
 
     &:active:after {

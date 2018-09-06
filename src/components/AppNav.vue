@@ -13,6 +13,7 @@
         </a>
 
         <app-moreinfo />
+        <app-toggle />
       </div>
     </div>
   </nav>
@@ -20,10 +21,12 @@
 
 <script>
 import AppMoreinfo from './../components/AppMoreinfo.vue'
+import AppToggle from './../components/AppToggle.vue'
 
 export default {
   components: {
-    AppMoreinfo
+    AppMoreinfo,
+    AppToggle
   }
 }
 </script>
