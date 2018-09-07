@@ -82,19 +82,11 @@ section {
   width: 75px;
   transition: 0.5s all ease;
   font-family: 'Space Mono', monospace;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-bottom-color: #ccc;
   text-align: left;
   border-radius: 4px;
   button {
-    background: rgba(255, 255, 255, 0.2);
     cursor: pointer;
-    border: 1px solid #ddd;
     border-radius: 2px;
-    &:focus {
-      outline: 1px dashed #ddd;
-    }
   }
   .block {
     width: 200px;

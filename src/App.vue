@@ -17,8 +17,8 @@ export default {
   components: {
     AppNav,
     AppItem,
-    AppDarkmode,
-    AppLightmode
+    dark: AppDarkmode,
+    light: AppLightmode
   },
   computed: {
     vuetree() {
@@ -26,7 +26,7 @@ export default {
     },
     selected() {
       const dark = this.$store.state.dark
-      return dark ? 'AppDarkmode' : 'AppLightmode'
+      return dark ? 'dark' : 'light'
     }
   }
 }
@@ -41,8 +41,6 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #34495e;
-  background-color: #f8f8f8;
   max-width: 100vw;
   min-height: 100vh;
 }

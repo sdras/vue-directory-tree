@@ -33,8 +33,6 @@ export default {
 
 <style lang="scss" scoped>
 nav {
-  border-bottom: 1px solid #ccc;
-  background: white;
   margin: 0 0 20px;
   height: 70px;
 }
@@ -60,10 +58,5 @@ nav {
   float: right;
   margin-top: 5px;
   position: relative;
-  svg {
-    path {
-      fill: #42b983;
-    }
-  }
 }
 </style>

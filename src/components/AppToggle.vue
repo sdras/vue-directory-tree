@@ -12,6 +12,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      bool: true
+    }
+  },
   methods: {
     toggleMode() {
       this.$store.commit('toggleDark')
@@ -21,15 +26,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//@click="toggleMode"
 //visually hidden, still accessible checkbox
-.tgl {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-}
+// .tgl {
+//   position: absolute !important;
+//   height: 1px;
+//   width: 1px;
+//   overflow: hidden;
+//   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+//   clip: rect(1px, 1px, 1px, 1px);
+// }
 
 .tgl-flip {
   + .tgl-btn {

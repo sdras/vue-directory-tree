@@ -3684,6 +3684,7 @@ export default new Vuex.Store({
     },
     toggleDark(state) {
       state.dark = !state.dark
+      console.log(state.dark)
     }
   },
   actions: {}
