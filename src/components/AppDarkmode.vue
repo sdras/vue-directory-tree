@@ -61,7 +61,8 @@ $grey: #888;
     }
   }
 
-  .note {
+  .note,
+  .findoutmore {
     background-color: $dkblack;
     border: 1px solid $mdblack;
     border-bottom-color: $ltblack;

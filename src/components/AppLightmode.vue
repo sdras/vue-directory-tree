@@ -52,7 +52,8 @@ $dkgrey: #ccc;
     }
   }
 
-  .note {
+  .note,
+  .findoutmore {
     background-color: #fff;
     border: 1px solid #ddd;
     border-bottom-color: #ccc;

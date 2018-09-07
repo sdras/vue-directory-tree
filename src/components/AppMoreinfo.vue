@@ -44,9 +44,6 @@ export default {
   display: block;
   padding: 20px 40px 30px;
   transition: 0.5s all ease;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-bottom-color: #ccc;
   text-align: left;
   border-radius: 4px;
 }
@@ -80,15 +77,5 @@ export default {
   width: 24px;
   height: 24px;
   cursor: pointer;
-}
-
-.questionpath {
-  fill: #d1d3d4;
-  opacity: 0.6;
-  transition: 0.25s all ease;
-}
-
-.questionpath:hover {
-  opacity: 1;
 }
 </style>
