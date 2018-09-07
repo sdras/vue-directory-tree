@@ -37,7 +37,6 @@ export default {
 .findoutmore {
   position: absolute;
   top: 31px;
-  right: 2px;
   line-height: 1.3;
   width: 300px;
   z-index: 4000;
@@ -46,6 +45,7 @@ export default {
   transition: 0.5s all ease;
   text-align: left;
   border-radius: 4px;
+  right: -24px;
 }
 
 @media (max-width: 800px) {
@@ -66,14 +66,12 @@ export default {
 
 .more-info-contain {
   fill: #42b983;
-  position: relative;
-  margin-left: -8px;
+  position: absolute;
+  margin: -2px 0 0 -16px;
 }
 
 .more-info {
   position: absolute;
-  top: -2px;
-  right: 0;
   width: 24px;
   height: 24px;
   cursor: pointer;

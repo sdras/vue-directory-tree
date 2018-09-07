@@ -27,7 +27,7 @@ export default {
 <style scoped>
 .note {
   position: absolute;
-  left: calc(100% + 10px);
+  left: calc(100% + 20px);
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   font-size: 15px;
   width: 300px;
