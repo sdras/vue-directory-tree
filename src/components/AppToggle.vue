@@ -35,37 +35,6 @@ export default {
   right: 0;
   font-size: 14px;
   cursor: pointer;
-  backface-visibility: hidden;
   border-radius: 4px;
-  //transform: rotateY(180deg);
 }
-
-.flip-enter-active {
-  transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53); //ease-in-quad
-}
-
-.flip-leave-active {
-  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); //ease-out-quad
-}
-
-.flip-enter,
-.flip-leave-to {
-  transform: rotateY(0) translateZ(0);
-  opacity: 0;
-}
-
-// &:checked + .tgl-btn {
-//   &:before {
-//     transform: rotateY(180deg);
-//   }
-
-//   &:after {
-//     transform: rotateY(0);
-//     right: 0;
-//   }
-
-//   &:active:after {
-//     transform: rotateY(20deg);
-//   }
-// }
 </style>
