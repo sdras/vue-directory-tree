@@ -59,4 +59,18 @@ nav {
   margin-top: 5px;
   position: relative;
 }
+
+@media only screen and (max-width: 600px) {
+  .navcontain {
+    width: 90vw !important;
+    span {
+      font-size: 15px !important;
+    }
+  }
+
+  .icons {
+    width: 100px !important;
+    justify-content: space-between;
+  }
+}
 </style>

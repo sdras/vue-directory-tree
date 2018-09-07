@@ -76,4 +76,10 @@ export default {
   height: 24px;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+  .more-info-contain {
+    display: none !important;
+  }
+}
 </style>

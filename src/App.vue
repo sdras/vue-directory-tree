@@ -60,6 +60,12 @@ h2,
 h3 {
   text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+  main {
+    width: 100vw;
+  }
+}
 </style>
 
 <style scoped>
