@@ -113,4 +113,21 @@ section {
   cursor: pointer;
   border: none;
 }
+
+@media only screen and (max-width: 600px) {
+  section {
+    transform: translateX(20px) !important;
+  }
+
+  .block,
+  .block .block .block .block {
+    font-size: 12px;
+    width: 150px !important;
+  }
+
+  .block button.info,
+  .block .block button.info {
+    font-size: 9px;
+  }
+}
 </style>

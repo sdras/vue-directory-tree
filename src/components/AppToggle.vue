@@ -1,8 +1,8 @@
 <template>
   <div @click="toggleMode">
     <transition name="flip" mode="out-in">
-      <div class="tgl-btn" v-if="!dark">Light</div>
-      <div class="tgl-btn" v-else>Dark</div>
+      <span class="tgl-btn" v-if="!dark">Light</span>
+      <span class="tgl-btn" v-else>Dark</span>
     </transition>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
   text-align: center;
   line-height: 1.75em;
   position: absolute;
-  top: 0;
+  top: -1px;
   right: 0;
   font-size: 14px;
   cursor: pointer;

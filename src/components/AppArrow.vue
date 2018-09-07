@@ -17,4 +17,12 @@ svg {
   left: 14px;
   fill: #42b983;
 }
+
+@media only screen and (max-width: 600px) {
+  svg {
+    width: 10px !important;
+    top: 30px !important;
+    left: 13px !important;
+  }
+}
 </style>
