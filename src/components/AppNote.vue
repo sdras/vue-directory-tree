@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="note">
     <p v-html="note"></p>
   </div>
 </template>
@@ -25,9 +25,8 @@ export default {
 </script>
 
 <style scoped>
-div {
+.note {
   position: absolute;
-  background: white;
   left: calc(100% + 10px);
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   font-size: 15px;
@@ -38,9 +37,6 @@ div {
   border-radius: 4px;
   margin: 5px 0;
   transition: 0.5s all ease;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-bottom-color: #ccc;
   padding: 2px 20px;
 }
 </style>

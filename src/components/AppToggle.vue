@@ -26,16 +26,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//@click="toggleMode"
 //visually hidden, still accessible checkbox
-// .tgl {
-//   position: absolute !important;
-//   height: 1px;
-//   width: 1px;
-//   overflow: hidden;
-//   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-//   clip: rect(1px, 1px, 1px, 1px);
-// }
+.tgl {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
 
 .tgl-flip {
   + .tgl-btn {
@@ -56,9 +55,6 @@ export default {
       cursor: pointer;
       backface-visibility: hidden;
       border-radius: 4px;
-      background: white;
-      color: #399c70;
-      border: 2px solid #42b983;
     }
 
     &:after {
@@ -83,7 +79,6 @@ export default {
     &:after {
       transform: rotateY(0);
       right: 0;
-      background: white;
     }
 
     &:active:after {

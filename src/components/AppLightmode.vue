@@ -34,12 +34,28 @@ $dkgrey: #ccc;
     border: 1px solid #ddd;
     border-bottom-color: #ccc;
     button {
-      background: rgba(255, 255, 255, 0.2);
       border: 1px solid #ddd;
       &:focus {
         outline: 1px dashed #ddd;
       }
     }
+  }
+
+  .tgl-flip {
+    + .tgl-btn {
+      &:after,
+      &:before {
+        background: white;
+        color: #399c70;
+        border: 2px solid #42b983;
+      }
+    }
+  }
+
+  .note {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: #ccc;
   }
 }
 </style>

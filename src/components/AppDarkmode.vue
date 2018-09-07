@@ -10,15 +10,17 @@ export default {}
 
 <style lang="scss" scoped>
 #app {
-  background: #222;
+  background: #000;
   color: white;
 }
 </style>
 
 <style lang="scss">
 $black: #000;
-$dkblack: #222;
-$ltblack: #333;
+$dkblack: #121212;
+$mdblack: #444;
+$ltblack: #555;
+$grey: #888;
 
 .dark {
   nav {
@@ -28,20 +30,41 @@ $ltblack: #333;
   }
 
   .icons svg path {
-    fill: white;
+    fill: $grey;
+  }
+
+  button {
+    color: white;
   }
 
   .block {
     background-color: $black;
-    border: 1px solid $dkblack;
+    border: 1px solid $mdblack;
     border-bottom-color: $ltblack;
     button {
-      background: rgba(0, 0, 0, 0.2);
+      background: $dkblack;
       border: 1px solid $ltblack;
       &:focus {
         outline: 1px dashed $ltblack;
       }
     }
+  }
+
+  .tgl-flip {
+    + .tgl-btn {
+      &:after,
+      &:before {
+        background: $dkblack;
+        color: white;
+        border: 2px solid $grey;
+      }
+    }
+  }
+
+  .note {
+    background-color: $dkblack;
+    border: 1px solid $mdblack;
+    border-bottom-color: $ltblack;
   }
 }
 </style>
