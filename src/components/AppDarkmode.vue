@@ -37,6 +37,10 @@ $grey: #888;
     color: white;
   }
 
+  .arrow {
+    opacity: 0.6;
+  }
+
   .block {
     background-color: $black;
     border: 1px solid $mdblack;
@@ -50,15 +54,10 @@ $grey: #888;
     }
   }
 
-  .tgl-flip {
-    + .tgl-btn {
-      &:after,
-      &:before {
-        background: $dkblack;
-        color: white;
-        border: 2px solid $grey;
-      }
-    }
+  .tgl-btn {
+    background: $dkblack;
+    color: white;
+    border: 2px solid $grey;
   }
 
   .note,

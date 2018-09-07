@@ -92,6 +92,9 @@ section {
     width: 200px;
     .block .block {
       width: 300px;
+      .block .block {
+        width: 235px;
+      }
     }
   }
 }

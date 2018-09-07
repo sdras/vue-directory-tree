@@ -41,15 +41,10 @@ $dkgrey: #ccc;
     }
   }
 
-  .tgl-flip {
-    + .tgl-btn {
-      &:after,
-      &:before {
-        background: white;
-        color: #399c70;
-        border: 2px solid #42b983;
-      }
-    }
+  .tgl-btn {
+    background: white;
+    color: #399c70;
+    border: 2px solid #42b983;
   }
 
   .note,
