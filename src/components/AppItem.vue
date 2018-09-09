@@ -14,7 +14,7 @@
       </button>
     </div>
     
-    <app-arrow v-if="arrOpen !== undefined" />
+    <app-arrow v-if="arrOpen !== undefined && isFolder" />
     <div v-if="noteShowing">
       <app-note :comments="comments" :path="unit.path"/>
     </div>
