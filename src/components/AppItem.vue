@@ -32,6 +32,7 @@
 </template>
 
 <script>
+// this way of working with recursive vue components was learned from chris fritz via the docs: https://vuejs.org/v2/examples/tree-view.html
 import { mapState } from 'vuex'
 import AppArrow from './AppArrow.vue'
 import AppNote from './AppNote.vue'
