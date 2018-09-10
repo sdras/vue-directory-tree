@@ -12,9 +12,9 @@ export default {}
 <style scoped>
 svg {
   position: absolute;
-  width: 30px;
-  top: 35px;
-  left: 14px;
+  width: 22px;
+  top: 29px;
+  left: 15px;
   fill: #42b983;
 }
 
