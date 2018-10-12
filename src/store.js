@@ -6,19 +6,20 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     dark: false,
-    //this lets us know which files to highlight
+    //this lets us know which folders to highlight
     opened: [
-      'vue',
-      '.github',
-      'scripts',
-      'src',
-      'core',
-      'instance',
-      'dist',
-      'platforms',
-      'web',
-      'compiler',
-      'runtime'
+      'vue/',
+      'vue/.github',
+      'vue/scripts',
+      'vue/src',
+      'vue/src/compiler',
+      'vue/src/core',
+      'vue/src/core/instance',
+      'vue/dist',
+      'vue/src/platforms',
+      'vue/src/platforms/web',
+      'vue/src/platforms/web/compiler',
+      'vue/src/platforms/web/runtime'
     ],
     //this will show any comments that are relevant to a particular file
     comments: {
@@ -3675,11 +3676,11 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    toggleOpened(state, name) {
-      if (state.opened.includes(name)) {
-        state.opened = state.opened.filter(e => e !== name)
+    toggleOpened(state, path) {
+      if (state.opened.includes(path)) {
+        state.opened = state.opened.filter(e => e !== path)
       } else {
-        state.opened.push(name)
+        state.opened.push(path)
       }
     },
     toggleDark(state) {
