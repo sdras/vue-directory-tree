@@ -1,12 +1,12 @@
 <template>
   <div class="block">
 
-    <div @click="toggleOpened(unit.name)">
+    <div @click="toggleOpened(unit.path)">
         {{ unit.name }}
       <button v-if="isFolder">{{ arrOpen ? '-' : '+' }}</button>
-      <button 
-        v-if="comments[unit.path]"  
-        @mouseenter="noteShowing = true" 
+      <button
+        v-if="comments[unit.path]"
+        @mouseenter="noteShowing = true"
         @mouseleave="noteShowing = false"
         class="info"
       >
@@ -23,7 +23,7 @@
       <app-item
         class="item"
         v-for="unit in unit.children"
-        :key="unit.name"
+        :key="unit.path"
         :unit="unit"
       />
     </section>
@@ -53,14 +53,14 @@ export default {
     }
   },
   methods: {
-    toggleOpened(name) {
-      this.$store.commit('toggleOpened', name)
+    toggleOpened(path) {
+      this.$store.commit('toggleOpened', path)
     }
   },
   computed: {
     ...mapState(['opened', 'comments']),
     arrOpen() {
-      return this.opened.find(el => el === this.unit.name)
+      return this.opened.find(el => el === this.unit.path)
     },
     isFolder() {
       return this.unit.children && this.unit.children.length
