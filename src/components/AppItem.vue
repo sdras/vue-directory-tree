@@ -5,9 +5,11 @@
         {{ unit.name }}
       <button v-if="isFolder">{{ arrOpen ? '-' : '+' }}</button>
       <button 
-        v-if="comments[unit.path]"  
-        @mouseenter="noteShowing = true" 
-        @mouseleave="noteShowing = false"
+        v-if="comments[unit.path]"
+        @blur="toggleNoteShowing"
+        @focus="toggleNoteShowing"
+        @mouseenter="toggleNoteShowing"
+        @mouseleave="toggleNoteShowing"
         class="info"
       >
         info
@@ -53,6 +55,9 @@ export default {
     }
   },
   methods: {
+    toggleNoteShowing() {
+      this.noteShowing = !this.noteShowing
+    },
     toggleOpened(name) {
       this.$store.commit('toggleOpened', name)
     }
